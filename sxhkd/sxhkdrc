@@ -1,0 +1,7 @@
+# negative -w arg to account for a border width (default: 100%)
+#F11
+#    tdrop -ma -w -4 -h '70%' -y 4 cool-retro-term -e zellij attach -c drop
+
+# negative -w arg to account for a border width (default: 100%)
+F12
+    tdrop -ma -h '70%' alacritty -o window.opacity=0.8 -e zellij attach -c drop
