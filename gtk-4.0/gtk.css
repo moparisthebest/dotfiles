@@ -1,0 +1,8 @@
+@import 'colors.css';
+window.dino-main {
+        font-size: 18px;
+}
+
+window.dino-main .dino-conversation {
+        font-size: 25px;
+}
