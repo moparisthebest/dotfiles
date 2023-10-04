@@ -9,7 +9,7 @@ true-color = true
 "T" = "page_down" # shift+move_visual_line_down is page down
 
 "F8" = ":open ~/.config/bin/run-from-helix"
-"F9" = ":sh zellij r -f -- ~/.config/bin/run-from-helix"
+"F9" = [":wa", ":sh zellij r -f -- ~/.config/bin/run-from-helix"]
 
 # these are non-standard changes, original dvorak commented with #x
 
@@ -371,6 +371,9 @@ true-color = true
 # my additions
 #"C-i" = "normal_mode" # this doesn't work???
 "A-i" = "normal_mode"
+
+"F8" = ":open ~/.config/bin/run-from-helix"
+"F9" = [":wa", ":sh zellij r -f -- ~/.config/bin/run-from-helix"]
 
 # these are non-standard changes, original dvorak commented with #x
 
@@ -782,6 +785,10 @@ true-color = true
 # my additions
 "C-i" = "normal_mode" # this doesn't work???
 "A-i" = "normal_mode"
+
+"F8" = ":open ~/.config/bin/run-from-helix"
+"F9" = [":wa", ":sh zellij r -f -- ~/.config/bin/run-from-helix"]
+
 # normal dvorak
 "esc" = "normal_mode" # "esc"
 "C-s" = "commit_undo_checkpoint" # "C-s"
