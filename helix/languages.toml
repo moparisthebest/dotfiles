@@ -1,0 +1,5 @@
+[[language]]
+name = "rust"
+auto-format = true
+formatter = { command = "~/.config/bin/format-rs-from-helix" }
+

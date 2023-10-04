@@ -1,0 +1,22 @@
+!/bin/bash
+
+args="--emit stdout --edition 2021 --color never"
+
+if [ -f rustfmt.toml]; then
+  rustfmt $args --config-path rustfmt.toml
+  exit $?
+fi
+if [ -f .rustfmt.toml]; then
+  rustfmt $args --config-path .rustfmt.toml
+  exit $?
+fi
+if [ -f rustfmt.nightly.toml]; then
+  rustfmt +nightly $args --config-path rustfmt.nightly.toml
+  exit $?
+fi
+if [ -f .rustfmt.nightly.toml]; then
+  rustfmt +nightly $args --config-path .rustfm.nightly.toml
+  exit $?
+fi
+# ok then just run my preferred format
+rustfmt +nightly $args --config imports_granularity=crate

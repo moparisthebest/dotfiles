@@ -155,7 +155,7 @@ if [ -f .rustfmt.nightly.toml]; then
   exit $?
 fi
 # ok then just run my preferred format
-cargo fmt -- --config imports_granularity=crate
+cargo +nightly fmt -- --config imports_granularity=crate
 }
 
 function spurdo() {
