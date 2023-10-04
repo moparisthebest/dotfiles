@@ -5,6 +5,11 @@ true-color = true
 # these are additions I like
 "C-l" = "page_up"   # ctrl+move_visual_line_up   is page up
 "C-k" = "page_down" # ctrl+move_visual_line_down is page down
+"N" = "page_up"   # shift+move_visual_line_up   is page up
+"T" = "page_down" # shift+move_visual_line_down is page down
+
+"F8" = ":open ~/.config/bin/run-from-helix"
+"F9" = ":sh zellij r -f -- ~/.config/bin/run-from-helix"
 
 # these are non-standard changes, original dvorak commented with #x
 
@@ -62,7 +67,7 @@ true-color = true
 "A-C" = "copy_selection_on_prev_line" # "A-C"
 "o" = "select_regex" # "s"
 "A-s" = "split_selection_on_newline" # "A-s"
-# error? "A-minus" = "merge_selections" # "A-minus"
+"A-minus" = "merge_selections" # "A-minus"
 "A-_" = "merge_consecutive_selections" # "A-_"
 "O" = "split_selection" # "S"
 #x "s" = "collapse_selection" # ";"
@@ -75,8 +80,8 @@ true-color = true
 "A-left" = "select_prev_sibling" # "A-p" | "A-left"
 "A-n" = "select_next_sibling" # "A-n" | "A-right"
 "A-right" = "select_next_sibling" # "A-n" | "A-right"
-# error? "A-e" = "move_parent_node_end" # "A-e"
-# error? "A-b" = "move_parent_node_start" # "A-b"
+"A-e" = "move_parent_node_end" # "A-e"
+"A-b" = "move_parent_node_start" # "A-b"
 "%" = "select_all" # "%"
 "q" = "extend_line_below" # "x"
 "Q" = "extend_to_line_bounds" # "X"
@@ -101,7 +106,7 @@ true-color = true
 "]" = "format_selections" # "="
 "H" = "join_selections" # "J"
 "A-J" = "join_selections_space" # "A-J"
-"T" = "keep_selections" # "K"
+# disable for now because made page down "T" = "keep_selections" # "K"
 "A-K" = "remove_selections" # "A-K"
 "w" = "keep_primary_selection" # ","
 "A-," = "remove_primary_selection" # "A-,"
@@ -390,8 +395,8 @@ true-color = true
 "<" = "extend_next_long_word_start" # "W"
 "X" = "extend_prev_long_word_start" # "B"
 ">" = "extend_next_long_word_end" # "E"
-# error? "A-e" = "extend_parent_node_end" # "A-e"
-# error? "A-b" = "extend_parent_node_start" # "A-b"
+"A-e" = "extend_parent_node_end" # "A-e"
+"A-b" = "extend_parent_node_start" # "A-b"
 "b" = "extend_search_next" # "n"
 "B" = "extend_search_prev" # "N"
 "y" = "extend_till_char" # "t"
@@ -410,6 +415,8 @@ true-color = true
 # these are additions I like
 "C-l" = "page_up"   # ctrl+move_visual_line_up   is page up
 "C-k" = "page_down" # ctrl+move_visual_line_down is page down
+"N" = "page_up"   # shift+move_visual_line_up   is page up
+"T" = "page_down" # shift+move_visual_line_down is page down
 
 # these are non-standard changes, original dvorak commented with #x
 
@@ -461,7 +468,7 @@ true-color = true
 "A-C" = "copy_selection_on_prev_line" # "A-C"
 "o" = "select_regex" # "s"
 "A-s" = "split_selection_on_newline" # "A-s"
-# error? "A-minus" = "merge_selections" # "A-minus"
+"A-minus" = "merge_selections" # "A-minus"
 "A-_" = "merge_consecutive_selections" # "A-_"
 "O" = "split_selection" # "S"
 #x "s" = "collapse_selection" # ";"
@@ -474,8 +481,8 @@ true-color = true
 "A-left" = "select_prev_sibling" # "A-p" | "A-left"
 "A-n" = "select_next_sibling" # "A-n" | "A-right"
 "A-right" = "select_next_sibling" # "A-n" | "A-right"
-# error? "A-e" = "move_parent_node_end" # "A-e"
-# error? "A-b" = "move_parent_node_start" # "A-b"
+#s "A-e" = "move_parent_node_end" # "A-e"
+#s "A-b" = "move_parent_node_start" # "A-b"
 "%" = "select_all" # "%"
 "q" = "extend_line_below" # "x"
 "Q" = "extend_to_line_bounds" # "X"
@@ -500,7 +507,7 @@ true-color = true
 "]" = "format_selections" # "="
 "H" = "join_selections" # "J"
 "A-J" = "join_selections_space" # "A-J"
-"T" = "keep_selections" # "K"
+# disable for now because made page down "T" = "keep_selections" # "K"
 "A-K" = "remove_selections" # "A-K"
 "w" = "keep_primary_selection" # ","
 "A-," = "remove_primary_selection" # "A-,"
@@ -793,7 +800,7 @@ true-color = true
 "del" = "delete_char_forward" # "C-d" | "del"
 "C-j" = "insert_newline" # "C-j" | "ret"
 "ret" = "insert_newline" # "C-j" | "ret"
-# error? "tab" = "smart_tab" # "tab"
+"tab" = "smart_tab" # "tab"
 "S-tab" = "insert_tab" # "S-tab"
 "up" = "move_visual_line_up" # "up"
 "down" = "move_visual_line_down" # "down"
