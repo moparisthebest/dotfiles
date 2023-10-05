@@ -1,12 +1,12 @@
 #!/bin/bash
 
-args="--emit stdout --edition 2021 --color never"
+args=""
 
 for cfg in rustfmt.toml .rustfmt.toml rustfmt.nightly.toml .rustfmt.nightly.toml rustfmt-nightly.toml .rustfmt-nightly.toml
 do
 [ "$cfg" == "rustfmt.nightly.toml" ] && args="+nightly $args"
-[ -f $cfg ] && exec rustfmt $args --config-path $cfg
+[ -f $cfg ] && exec cargo $args fmt -- --config-path $cfg
 done
 
 # or if no files, fallback to my preferred format
-exec rustfmt $args --config imports_granularity=crate
+exec cargo $args fmt -- --config imports_granularity=crate

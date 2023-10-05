@@ -6,9 +6,8 @@
 [ -z "$PS1" ] && return
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
+[ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
+[ -d "$HOME/.config/bin" ] && PATH="$HOME/.config/bin:$PATH"
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -108,7 +107,9 @@ function pdfcat () {
 }
 
 # https://incenp.org/notes/2015/gnupg-for-ssh-authentication.html
-gpg-connect-agent /bye
+# gpg-connect-agent /bye
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 
 function mkcd() {
@@ -134,29 +135,7 @@ export VISUAL=$EDITOR
 
 export PATH="$PATH:$HOME/.cargo/bin"
 
-export PATH="$PATH:/mnt/winegames/bin"
-
-#alias cfmt='cargo fmt -- --config imports_granularity=crate'
-function cfmt() {
-if [ -f rustfmt.toml]; then
-  cargo fmt -- --config-path rustfmt.toml
-  exit $?
-fi
-if [ -f .rustfmt.toml]; then
-  cargo fmt -- --config-path .rustfmt.toml
-  exit $?
-fi
-if [ -f rustfmt.nightly.toml]; then
-  cargo +nightly fmt -- --config-path rustfmt.nightly.toml
-  exit $?
-fi
-if [ -f .rustfmt.nightly.toml]; then
-  cargo +nightly fmt -- --config-path .rustfm.nightly.toml
-  exit $?
-fi
-# ok then just run my preferred format
-cargo +nightly fmt -- --config imports_granularity=crate
-}
+[ -d /mnt/winegames/bin ] && export PATH="$PATH:/mnt/winegames/bin"
 
 function spurdo() {
 sed "s/kek/geg/gI;s/epic/ebin/gI;s/america/clapistan/gI;s/right/rite/gI;s/your/ur/gI;s/\./ :DD/gI;s/'//gI;s/,/XDD/gI;s/wh/w/gI;s/th/d/gI;s/af/ab/gI;s/ap/ab/gI;s/ca/ga/gI;s/ck/gg/gI;s/co/go/gI;s/ev/eb/gI;s/ex/egz/gI;s/et/ed/gI;s/iv/ib/gI;s/it/id/gI;s/ke/ge/gI;s/nt/nd/gI;s/op/ob/gI;s/ot/od/gI;s/po/bo/gI;s/pe/be/gI;s/pi/bi/gI;s/up/ub/gI;s/va/ba/gI;s/ck/gg/gI;s/cr/gr/gI;s/kn/gn/gI;s/lt/ld/gI;s/mm/m/gI;s/nt/dn/gI;s/pr/br/gI;s/ts/dz/gI;s/tr/dr/gI;s/bs/bz/gI;s/ds/dz/gI;s/es/es/gI;s/fs/fz/gI;s/gs/gz/gI;s/ is/iz/gI;s/as/az/gI;s/ls/lz/gI;s/ms/mz/gI;s/ns/nz/gI;s/rs/rz/gI;s/ss/sz/gI;s/ts/tz/gI;s/us/uz/gI;s/ws/wz/gI;s/ys/yz/gI;s/alk/olk/gI;s/ing/ign/gI;s/ic/ig/gI;s/ng/nk/gI" \
