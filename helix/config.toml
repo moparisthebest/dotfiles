@@ -1,6 +1,8 @@
 [editor]
 true-color = true
 
+# http://www.keyboard-layout-editor.com/#/gists/d1f226131381138f983d9b3beaeaa90b
+
 [keys.normal]
 # these are additions I like
 "C-l" = "page_up"   # ctrl+move_visual_line_up   is page up
