@@ -11,7 +11,7 @@ true-color = true
 "T" = "page_down" # shift+move_visual_line_down is page down
 
 "F8" = ":open ~/.config/bin/run-from-helix"
-"F9" = [":wa", ":sh zellij r -f -- ~/.config/bin/run-from-helix"]
+"F9" = [":wa", ":sh zellij r --name run --close-on-exit --direction down -- ~/.config/bin/run-from-helix; zellij action resize decrease; zellij action resize decrease; zellij action resize decrease"]
 
 # these are non-standard changes, original dvorak commented with #x
 

@@ -1,4 +1,9 @@
 #!/bin/bash
 
-exec cargo test
+cargo check
+# cargo test
 
+echo "exited with $?"
+
+echo "press any key to exit"
+read -n1 bla
