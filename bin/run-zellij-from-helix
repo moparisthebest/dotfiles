@@ -1,0 +1,8 @@
+#!/bin/bash
+
+zellij r --name run --close-on-exit --direction down -- ~/.config/bin/run-from-helix
+
+for x in {1..3}
+do
+  zellij action resize decrease
+done
