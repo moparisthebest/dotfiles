@@ -12,6 +12,7 @@ true-color = true
 
 "F8" = ":open ~/.config/bin/run-from-helix"
 "F9" = [":wa", ":sh ~/.config/bin/run-zellij-from-helix"]
+"F10" = [":wa", "workspace_diagnostics_picker"]
 
 # these are non-standard changes, original dvorak commented with #x
 
@@ -376,6 +377,7 @@ true-color = true
 
 "F8" = ":open ~/.config/bin/run-from-helix"
 "F9" = ["normal_mode", ":wa", ":sh ~/.config/bin/run-zellij-from-helix"]
+"F10" = ["normal_mode", ":wa", "workspace_diagnostics_picker"]
 
 # these are non-standard changes, original dvorak commented with #x
 
@@ -790,6 +792,7 @@ true-color = true
 
 "F8" = ":open ~/.config/bin/run-from-helix"
 "F9" = ["normal_mode", ":wa", ":sh ~/.config/bin/run-zellij-from-helix"]
+"F10" = ["normal_mode", ":wa", "workspace_diagnostics_picker"]
 
 # normal dvorak
 "esc" = "normal_mode" # "esc"
