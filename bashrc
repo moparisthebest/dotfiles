@@ -154,7 +154,7 @@ export CARGO_TARGET_DIR=/tmp/cargo-target
 
 # this has to be last
 if [[ -z "$ZELLIJ" ]]; then
-    zellij attach -c
+    zellij attach -c drop
     # uncomment for exit shell when zellij exits
     # exit
 fi
