@@ -47,7 +47,7 @@ exec --no-startup-id picom -bCG --no-fading-openclose --vsync --backend glx --in
 
 # exec --no-startup-id kate -s i3
 
-exec --no-startup-id GDK_DPI_SCALE=1.5 dino
+exec --no-startup-id GDK_DPI_SCALE=1.5 GTK_THEME='Adwaita:dark' dino
 
 # kde autostart ?
 exec --no-startup-id openkeepass.sh
