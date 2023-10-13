@@ -1,0 +1,18 @@
+[user]
+	email = admin@moparisthebest.com
+	name = moparisthebest
+	signingkey = 88C93BFE27BC8229!
+[push]
+	default = simple
+	autoSetupRemote = true
+[core]
+	# pager = hx
+	excludesfile = /home/mopar/.config/git/gitignore
+[help]
+	autocorrect = 1
+# [color]
+	# ui = false
+[init]
+	defaultBranch = master
+[commit]
+	gpgsign = true
