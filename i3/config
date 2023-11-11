@@ -41,7 +41,7 @@ exec --no-startup-id feh --bg-scale /home/mopar/Documents/wallpaper/1056662-arch
 
 #exec --no-startup-id yakuake
 #exec --no-startup-id sxhkd
-bindsym F12 exec --no-startup-id tdrop -ma -h '100%' alacritty -o window.opacity=0.8 -e zellij attach -c drop
+bindsym F12 exec --no-startup-id tdrop -ma -h '100%' alacritty -o window.opacity=0.8 -e ~/.config/bin/z
 
 exec --no-startup-id picom -bCG --no-fading-openclose --vsync --backend glx --inactive-opacity=1 --frame-opacity=0.5 --menu-opacity=0.8
 
