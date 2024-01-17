@@ -1,7 +1,13 @@
 [editor]
 true-color = true
-
+# gutters = ["diagnostics"]
 # http://www.keyboard-layout-editor.com/#/gists/d1f226131381138f983d9b3beaeaa90b
+
+[editor.soft-wrap]
+enable = true
+# auto-save = true
+# max-wrap = 25 # increase value to reduce forced mid-word wrapping
+# max-indent-retain = 0
 
 [keys.normal]
 # these are additions I like
@@ -124,7 +130,7 @@ true-color = true
 "A-(" = "rotate_selection_contents_backward" # "A-("
 "A-)" = "rotate_selection_contents_forward" # "A-)"
 "A-:" = "ensure_selections_forward" # "A-:"
-"esc" = "normal_mode" # "esc"
+"esc" = [":wa", "normal_mode"] # "esc"
 "C-b" = "page_up" # "C-b" | "pageup"
 "pageup" = "page_up" # "C-b" | "pageup"
 "C-f" = "page_down" # "C-f" | "pagedown"
@@ -372,8 +378,8 @@ true-color = true
 
 [keys.select]
 # my additions
-#"C-i" = "normal_mode" # this doesn't work???
-"A-i" = "normal_mode"
+#"C-i" = [":wa", "normal_mode"] # this doesn't work???
+"A-i" = [":wa", "normal_mode"]
 
 "F8" = ":open ~/.config/bin/run-from-helix"
 "F9" = ["normal_mode", ":wa", ":sh ~/.config/bin/run-zellij-from-helix"]
@@ -413,7 +419,7 @@ true-color = true
 "home" = "extend_to_line_start" # "home"
 "end" = "extend_to_line_end" # "end"
 "esc" = "exit_select_mode" # "esc"
-"k" = "normal_mode" # "v"
+"k" = [":wa", "normal_mode"] # "v"
 
 # in the default keymap, select extends normal, but we have to copy/paste it here, which is annoying
 # keys defined above should take precedence over keys from normal below, will comment those with #s
@@ -787,15 +793,15 @@ true-color = true
 
 [keys.insert]
 # my additions
-"C-i" = "normal_mode" # this doesn't work???
-"A-i" = "normal_mode"
+"C-i" = [":wa", "normal_mode"] # this doesn't work???
+"A-i" = [":wa", "normal_mode"]
 
 "F8" = ":open ~/.config/bin/run-from-helix"
 "F9" = ["normal_mode", ":wa", ":sh ~/.config/bin/run-zellij-from-helix"]
 "F10" = ["normal_mode", ":wa", "workspace_diagnostics_picker"]
 
 # normal dvorak
-"esc" = "normal_mode" # "esc"
+"esc" = [":wa", "normal_mode"] # "esc"
 "C-s" = "commit_undo_checkpoint" # "C-s"
 "C-x" = "completion" # "C-x"
 "C-r" = "insert_register" # "C-r"
