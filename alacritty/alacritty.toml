@@ -1,0 +1,26 @@
+[font]
+size = 10.0
+
+[font.normal]
+# it's one of these depending on machine ????
+family = "JetBrains Mono NF"
+# family = "JetBrains Mono Nerd Font"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "F5"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "F6"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "F7"
+
+[selection]
+save_to_clipboard = true
+
+[window]
+decorations = "none"
+opacity = 0.8
