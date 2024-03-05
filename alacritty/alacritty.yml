@@ -133,7 +133,9 @@ font:
     #   - (Windows) Consolas
     #family: monospace
     # family: JetBrains Mono
-    family: JetBrains Mono Nerd Font
+    # oddly on arch it's NF and ubuntu Nerd Font, why?
+    # family: JetBrains Mono Nerd Font
+    family: JetBrains Mono NF
     #family: Atari ASCII 8x8
 
     # The `style` can be specified to pick a specific face.

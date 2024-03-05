@@ -1,7 +1,20 @@
 #!/bin/bash
+set -o pipefail
 
-cargo check
+./build.sh
+# cargo check --all-targets
+# cargo check
 # cargo test
+# cargo clippy --all --all-targets --fix --allow-dirty --allow-staged
+
+# echo -n > error.log; RUST_BACKTRACE=1 cargo run -- ash@code.moparisthe.best/moparisthebest 2>&1 | tee -a error.log | grep --line-buffered -v '^+'
+
+# cargo check -p tokio-xmpp --no-default-features --features tls-rust
+# cargo check -p xmpp --no-default-features --features tls-rust
+
+# xsltproc xep.xsl host-meta-2.xml > host-meta-2.html && firefox host-meta-2.html
+
+# [ $? -eq 0 ] && exit 0
 
 echo "exited with $?"
 
