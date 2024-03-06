@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+SCRIPTPATH="$( cd "$(dirname "$0")" || return ; pwd -P )"
+
+pkill firefox
+pkill dino
+
