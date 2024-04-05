@@ -149,6 +149,18 @@ do
 done <<< "${@:-$(cat /dev/stdin)}"
 }
 
+function dvorak() {
+    qwerty="-=qwertyuiop[]asdfghjkl;zxcvbnm,./_+QWERTYUIOP{}ASDFGHJKL:\"ZXCVBNM<>?'"
+    dvorak="[]',.pyfgcrl/=aoeuidhtns;qjkxbmwvz{}\"<>PYFGCRL?+AOEUIDHTNS_:QJKXBMWVZ-"
+    tr -- "$qwerty" "$dvorak"
+}
+
+function qwerty() {
+    qwerty="-=qwertyuiop[]asdfghjkl;zxcvbnm,./_+QWERTYUIOP{}ASDFGHJKL:\"ZXCVBNM<>?'"
+    dvorak="[]',.pyfgcrl/=aoeuidhtns;qjkxbmwvz{}\"<>PYFGCRL?+AOEUIDHTNS_:QJKXBMWVZ-"
+    tr -- "$dvorak" "$qwerty"
+}
+
 #export RUSTC_WRAPPER=sccache
 export CARGO_TARGET_DIR=/tmp/cargo-target
 
