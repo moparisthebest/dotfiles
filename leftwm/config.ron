@@ -96,6 +96,7 @@
         (command: Execute, value: "pactl set-source-mute @DEFAULT_SOURCE@ toggle", modifier: [], key: "XF86AudioMicMute"),
         // (command: Execute, value: "", modifier: [], key: ""),
     
+        (command: Execute, value: "toggle-touchpad.sh", modifier: ["modkey"], key: "F11"),
         (command: Execute, value: "rofi -show run", modifier: ["modkey"], key: "space"),
         // (command: Execute, value: "tdrop -ma -h '100%' alacritty -o window.opacity=0.8 -e ~/.config/bin/z", modifier: [], key: "F12"),
         (command: ToggleScratchPad, value: "Alacritty", modifier: [], key: "F12"),

@@ -4,6 +4,8 @@ export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
 # pacman -S --needed leftwm leftwm-theme-git polybar pavucontrol xss-lock physlock picom feh network-manager-applet blueman
 
+xrandr --dpi 192
+
 # Dim the screen after 30s of inactivity, lock the screen two minutes later using i3lock:
 xset s 30 120
 xss-lock -n ~/bin/dim-screen.sh -- physlock -smd &
