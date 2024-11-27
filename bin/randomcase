@@ -1,0 +1,6 @@
+#!/bin/bash
+while IFS='' read -r -d '' -n 1 char
+do    
+    printf %s "$char" | ( [ $(( $RANDOM % 2 )) -eq 0 ] && tr '[[:lower:]]' '[[:upper:]]' || tr '[[:upper:]]' '[[:lower:]]' )
+done <<< "${@:-$(cat /dev/stdin)}"
+

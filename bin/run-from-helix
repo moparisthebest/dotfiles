@@ -1,9 +1,9 @@
 #!/bin/bash
 set -o pipefail
 
-./build.sh
+# ./build.sh
 # cargo check --all-targets
-# cargo check
+cargo check
 # cargo test
 # cargo clippy --all --all-targets --fix --allow-dirty --allow-staged
 

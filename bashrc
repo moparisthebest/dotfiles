@@ -142,13 +142,6 @@ sed "s/kek/geg/gI;s/epic/ebin/gI;s/america/clapistan/gI;s/right/rite/gI;s/your/u
 <<< "${@:-$(cat /dev/stdin)}"
 }
 
-function randomcase() {
-while IFS='' read -r -d '' -n 1 char
-do    
-    printf %s "$char" | ( [ $(( $RANDOM % 2 )) -eq 0 ] && tr '[[:lower:]]' '[[:upper:]]' || tr '[[:upper:]]' '[[:lower:]]' )
-done <<< "${@:-$(cat /dev/stdin)}"
-}
-
 function dvorak() {
     qwerty="-=qwertyuiop[]asdfghjkl;zxcvbnm,./_+QWERTYUIOP{}ASDFGHJKL:\"ZXCVBNM<>?'"
     dvorak="[]',.pyfgcrl/=aoeuidhtns;qjkxbmwvz{}\"<>PYFGCRL?+AOEUIDHTNS_:QJKXBMWVZ-"

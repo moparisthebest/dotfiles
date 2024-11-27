@@ -59,6 +59,7 @@
     insert_behavior: Bottom,
     scratchpad: [
         (name: "Alacritty", value: "alacritty -o window.opacity=0.8 -e ~/.config/bin/z", x: 0, y: 0, height: 1474, width: 2256),
+        // (name: "Alacritty", value: "/usr/bin/alacritty", x: 0, y: 0, height: 1474, width: 2256),
     ],
     window_rules: [
         // (window_title: ".*Zellij.*", spawn_fullscreen: true),

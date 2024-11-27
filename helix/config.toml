@@ -5,7 +5,7 @@ theme = "github_dark_colorblind"
 
 [editor]
 true-color = true
-gutters = ["diagnostics"]
+gutters = ["diagnostics", "line-numbers"]
 # http://www.keyboard-layout-editor.com/#/gists/d1f226131381138f983d9b3beaeaa90b
 
 [editor.soft-wrap]
