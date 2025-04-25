@@ -15,6 +15,8 @@ pgrep dino || GDK_DPI_SCALE=1.5 GTK_THEME='Adwaita:dark' dino &
 openkeepass.sh &
 pgrep firefox || firefox &
 
+pgrep wired || wired &
+
 # xss-lock --transfer-sleep-lock -- i3lock --nofork &
 # ~/.screenlayout/all.60hz.sh &
 # nm-applet &
