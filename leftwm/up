@@ -11,7 +11,7 @@ xset s 30 120
 xss-lock -n ~/bin/dim-screen.sh -- physlock -smd &
 
 feh --bg-scale /home/mopar/Documents/wallpaper/1056662-arch-linux-wallpaper-1920x1080-for-samsung-galaxy.jpg &
-pgrep dino || GDK_DPI_SCALE=1.5 GTK_THEME='Adwaita:dark' dino &
+pgrep dino || GDK_DPI_SCALE=1.5 GTK_THEME='Adwaita:dark' ADW_DISABLE_PORTAL=1 dino &
 openkeepass.sh &
 pgrep firefox || firefox &
 

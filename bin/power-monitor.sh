@@ -3,6 +3,7 @@
 BAT=$(echo /sys/class/power_supply/BAT*)
 BAT_STATUS="$BAT/status"
 BAT_CAP="$BAT/capacity"
+AC_BAT_PERCENT=98
 LOW_BAT_PERCENT=20
 LOW_BAT_SHUTDOWN=2
 
@@ -11,10 +12,11 @@ BAT_PROFILE="balanced"
 LOW_BAT_PROFILE="power-saver"
 
 # wait a while if needed
-[[ -z $STARTUP_WAIT ]] || sleep "$STARTUP_WAIT"
+# [[ -z $STARTUP_WAIT ]] || sleep "$STARTUP_WAIT"
 
 # start the monitor loop
 prev=0
+prev_low_bat=0
 
 while true; do
 	# read the current state
@@ -27,9 +29,15 @@ while true; do
 			poweroff
 		elif [[ $bat -gt $LOW_BAT_PERCENT ]]; then
 			profile=$BAT_PROFILE
-		else
+		elif [[ $bat -ge $AC_BAT_PERCENT ]]; then
+			profile=$AC_PROFILE
+		elif [[ $prev_low_bat -ne $bat ]]; then
+		  prev_low_bat=$bat
 		  echo "low power $bat"
 		  notify-send -t 30000 power-monitor "low power $bat" &
+			profile=$LOW_BAT_PROFILE
+		else
+		  echo "low power no toast $bat"
 			profile=$LOW_BAT_PROFILE
 		fi
 	else
@@ -47,4 +55,7 @@ while true; do
 
 	# wait for the next power change event
 	inotifywait -qq "$BAT_STATUS" "$BAT_CAP"
+	# inotifywait --excludei '.*open.*' "$BAT_STATUS" "$BAT_CAP"
+	# only see open and access so far
+	# inotifywait -e modify -e close_write -e moved_to -e move -e create -e attrib -e delete -e delete_self -e unmount "$BAT_STATUS" "$BAT_CAP"
 done
