@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-export $(dbus-launch)
+
+# exit 0
+
+# export $(dbus-launch)
 
 export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
@@ -9,17 +12,17 @@ if [ -f "/tmp/leftwm-theme-down" ]; then
 fi
 ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
 
-if [ command -v dunst ]; then
-    dunst
-fi
+# if [ command -v dunst ]; then
+#     dunst
+# fi
 
-if [ -x "$(command -v picom)" ]; then
-    picom &> /dev/null &
-fi
+# if [ -x "$(command -v picom)" ]; then
+#     picom &> /dev/null &
+# fi
 
-if [ -x "$(command -v feh)" ]; then
-    feh --bg-fill "$SCRIPTPATH/wallpaper.jpg"
-fi
+# if [ -x "$(command -v feh)" ]; then
+#     feh --bg-fill "$SCRIPTPATH/wallpaper.jpg"
+# fi
 
 leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
 
@@ -31,3 +34,4 @@ if [ -x "$(command -v polybar)" ]; then
     done <<< "$monitors"
     exit 0
 fi
+

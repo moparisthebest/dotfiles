@@ -10,6 +10,8 @@
 #![enable(implicit_some)]
 #![enable(unwrap_newtypes)]
 (
+    backend: XLib,
+    //backend: X11rb,
     modkey: "Mod4",
     mousekey: "Mod4",
     workspaces: [],
@@ -57,10 +59,15 @@
     ],
     layout_mode: Tag,
     insert_behavior: Bottom,
+    default_width: 2880,
+    default_height: 1890,
     scratchpad: [
         // bar is 30px high, so og fw 2256x1504 = 2256x1474, new 2880x1920 = 2880x1890
         // (name: "Alacritty", value: "/usr/bin/alacritty -o window.opacity=0.8 -e ~/.config/bin/z", x: 0, y: 0, height: 1474, width: 2256),
-        (name: "Alacritty", value: "/usr/bin/alacritty -o window.opacity=0.8 -e ~/.config/bin/z", x: 0, y: 0, height: 1890, width: 2880),
+        
+        //(name: "Alacritty", value: "alacritty", args: ["-o", "window.opacity=0.8", "-e", "~/.config/bin/z"], x: 0, y: 0, height: 1890, width: 2880),
+         (name: "Alacritty", args: None, value: "/home/mopar/.config/bin/alacrittyz", x: 0, y: 0, height: 1890, width: 2880),
+        
         // (name: "Alacritty", value: "/usr/bin/alacritty", x: 0, y: 0, height: 1474, width: 2256),
     ],
     window_rules: [
@@ -101,15 +108,17 @@
     
         (command: Execute, value: "~/bin/toggle-touchpad.sh", modifier: ["modkey"], key: "F11"),
         (command: Execute, value: "rofi -show run", modifier: ["modkey"], key: "space"),
-        // (command: Execute, value: "tdrop -ma -h '100%' alacritty -o window.opacity=0.8 -e ~/.config/bin/z", modifier: [], key: "F12"),
+        //(command: Execute, value: "tdrop -ma -h '100%' alacritty -o window.opacity=0.8 -e ~/.config/bin/z", modifier: [], key: "F12"),
+        // (command: Execute, value: "tdrop -ma -w '100%' -h '100%' -x 0 -y 0 -P 'leftwm command ToggleFullScreen' -- alacritty -o window.opacity=0.8 -e ~/.config/bin/z", modifier: [], key: "F12"),
         (command: ToggleScratchPad, value: "Alacritty", modifier: [], key: "F12"),
-        (command: ToggleScratchPad, value: "Alacritty", modifier: ["modkey"], key: "F12"),
+        // (command: ToggleScratchPad, value: "Alacritty", modifier: ["modkey"], key: "F10"),
         (command: CloseWindow, value: "", modifier: ["modkey"], key: "q"),
         (command: HardReload, modifier: ["modkey", "Shift"], key: "b"),
         (command: ToggleFullScreen, modifier: ["modkey"], key: "f"),
         (command: ToggleFloating, modifier: ["modkey", "Control"], key: "f"),
         (command: ToggleSticky, modifier: ["modkey"], key: "v"),
-        (command: Execute, value: "physlock -sm", modifier: ["modkey", "Control"], key: "l"),
+        // (command: Execute, value: "physlock -sm", modifier: ["modkey", "Control"], key: "l"),
+        (command: Execute, value: "xset s activate", modifier: ["modkey", "Control"], key: "l"),
         (command: Execute, value: "systemctl reboot", modifier: ["modkey", "Control"], key: "r"),
         (command: Execute, value: "systemctl poweroff", modifier: ["modkey", "Control"], key: "s"),
         (command: Execute, value: "systemctl suspend", modifier: ["modkey", "Control"], key: "u"),

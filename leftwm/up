@@ -8,22 +8,30 @@ xrandr --dpi 192
 
 # Dim the screen after 30s of inactivity, lock the screen two minutes later using i3lock:
 xset s 30 120
-xss-lock -n ~/bin/dim-screen.sh -- physlock -smd &
+pgrep xss-lock || xss-lock -n ~/bin/dim-screen.sh -- physlock -smd &
 
 feh --bg-scale /home/mopar/Documents/wallpaper/1056662-arch-linux-wallpaper-1920x1080-for-samsung-galaxy.jpg &
-pgrep dino || GDK_DPI_SCALE=1.5 GTK_THEME='Adwaita:dark' ADW_DISABLE_PORTAL=1 dino &
-openkeepass.sh &
+
+# ADW_DEBUG_COLOR_SCHEME=prefer-dark
+# pgrep dino || GDK_DPI_SCALE=1.5 GTK_THEME='Adwaita:dark' ADW_DISABLE_PORTAL=1 dino &
+pgrep dino || GDK_DPI_SCALE=1.5 ADW_DEBUG_COLOR_SCHEME=prefer-dark dino &
+
+# openkeepass.sh &
 pgrep firefox || firefox &
 
 pgrep wired || wired &
+
+pgrep -f power-monitor.sh || ~/.config/bin/power-monitor.sh &
 
 # xss-lock --transfer-sleep-lock -- i3lock --nofork &
 # ~/.screenlayout/all.60hz.sh &
 # nm-applet &
 # yakuake &
 # sxhkd &
-# picom -bCG --no-fading-openclose --vsync --backend glx --inactive-opacity=1 --frame-opacity=0.5 --menu-opacity=0.8 &
+# pgrep picom || picom -bCG --no-fading-openclose --vsync --backend glx --inactive-opacity=1 --frame-opacity=0.5 --menu-opacity=0.8 &
+pgrep picom || picom -bc --no-fading-openclose --vsync --backend glx --inactive-opacity=1 --frame-opacity=0.5 --menu-opacity=0.8 &
 # kate -s i3 &
 # chromium &
 # clementine && qdbus org.mpris.MediaPlayer2.clementine /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Play &
+
 

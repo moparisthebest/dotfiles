@@ -18,8 +18,8 @@ key = "F6"
 action = "ResetFontSize"
 key = "F7"
 
-[selection]
-save_to_clipboard = true
+# [selection]
+# save_to_clipboard = true
 
 [window]
 decorations = "none"

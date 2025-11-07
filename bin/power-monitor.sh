@@ -14,6 +14,9 @@ LOW_BAT_PROFILE="power-saver"
 # wait a while if needed
 # [[ -z $STARTUP_WAIT ]] || sleep "$STARTUP_WAIT"
 
+# make sure only 1 instance of this script is running at any time
+# [ "${MOPARLOCK}" != "$0" ] && exec env MOPARLOCK="$0" flock -en "$0" "$0" "$@" || :
+
 # start the monitor loop
 prev=0
 prev_low_bat=0

@@ -1,7 +1,13 @@
 #![enable(implicit_some)]
 (
+    //  gutter: [(
+    //     side: Bottom,
+    //     value: 30
+    //     )]
+    // ),
     border_width: 0,
     margin: 0,
+    workspace_margin: 0,
     default_border_color: "#28587B",
     floating_border_color: "#AB3428",
     focused_border_color: "#FEC601"
